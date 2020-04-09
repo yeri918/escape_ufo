@@ -2,6 +2,7 @@
 Escape UFO requires players to pass three rounds of different games incorporated in the mission of escaping UFO back to the Earth. 
 
 **Round 1.**
+
 Goal: Decrypt the encrypted message to find the right card to open the door. 
 The player wakes up in an unknown place, and the player finds a decrypted message under his/her pillow. The time starts ticking, which marks the start of the first game. The player is required to find the enigma machine to decrypt the message. The encrypted message instructs the player to find the card to be scanned on the card scanner next to the door with clues.
 
