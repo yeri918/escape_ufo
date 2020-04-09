@@ -1,5 +1,6 @@
 # Escape UFO: Game Description and Rules
-![](https://drive.google.com/file/d/1mm7AzFO4Yu9j_xnWoxzGIl71X1hiW9KQ/view?usp=sharing)
+![](https://wallpaperstock.net/dark-ufo_wallpapers_32160_852x480.jpg)
+
 Escape UFO requires players to pass three rounds of different games incorporated in the mission of escaping UFO back to the Earth. 
 
 **Round 1.**
