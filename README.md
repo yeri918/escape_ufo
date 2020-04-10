@@ -38,7 +38,7 @@ Players may not complete the whole game, so in this case, in Escape UFO, we allo
 
 The `switch` statement will be used to load the game from where the player has ended previously. The counter will be used to indicate which status the player has gone. Based on the integer of the counter, the game will resume using the switch statement. 
 
-## Dynamic Memory Management
+## 3. Dynamic Memory Management
 
 **Dynamic arrays** will be used in this program to avoid any non-essential counts and calculations.
 
@@ -46,7 +46,7 @@ A dynamic struct array scoreboard is needed to display/sort the final scores of 
 
 Dynamic struct array inventory will also be created to save all the objects that the user keeps during the gameplay. Since it is unknown how many items the user will keep, the array is initially sized zero, and later expanded depending on the number of items. The struct will include two string values: an item name and an item description.
 
-## File Input/Output
+## 4. File Input/Output
 
 Two files needed: **autosave.txt**, **scoreboard.txt**
 
@@ -72,7 +72,7 @@ The file is created after the game is completed for the first time in the workin
 3. `Achievement` is displayed in %(percentage). This is based on not only the progress of the game but also the items that a person picks and important sub-plot materials as well. 
 The final scores of the player will be displayed (file output) if the user wants to. Scores will be displayed in highest to lowest score order.
 
-## Program codes in multiple files
+## 5. Program codes in multiple files
 
 The main function (main.cpp) will include the checkpoint system and function headers only.
 
