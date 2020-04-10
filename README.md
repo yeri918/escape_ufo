@@ -1,7 +1,8 @@
-![](https://github.com/yeri918/escape_ufo/blob/master/Banner.png)
+Ye Ri Park 3035712080
+
 
 # Escape UFO: Game Description and Rules
-
+![](https://github.com/yeri918/escape_ufo/blob/master/Banner.png)
 Escape UFO requires players to pass three rounds of different games incorporated in the mission of escaping UFO back to the Earth. 
 
 **Round 1.**
