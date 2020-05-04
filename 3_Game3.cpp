@@ -2,7 +2,7 @@
 #include "Game3.h"
 using namespace std;
 
-int Game3(){
+void Game3(){
   intro_three();
   setBoard();
   tubeassign();
