@@ -77,16 +77,17 @@ File for save(Game0.h)
  - `start.cpp`: welcomes the player and asks whether they want to start a new game, resume the game, or to quit. 
 
 First Round (Game1.h)
- - `locate.cpp`: locates the true key and fake keys in different containers.
- - `clue.cpp`: gives clues to find the key (Specific content of the notes will be updated later. This part might consist several functions).
- - `encryption.cpp`: this function encrypts the note to another form (alien words) before the message is found.
+ - `gamein.cpp`: Responsible for maintaining the basic structure of Game 1: the game will loop unless the player found a key.
+ - `action.cpp`: the main menu of Game 1: user can decide what object in the rooom to interact with.
+ - `table.cpp` : includes 4 functions that stores all the interactions in different objects (4 choices).
+ - `encryption.cpp`: this function encrypts the note to another form (alien words) before the translator machine is found.
  
 Second Round (Game2.h)
- - `boardscript.cpp`: randomly loads one of the pre-made boards (total 5 or more)
- - `display.cpp`: outputs the current board
- - `changeboard.cpp`: changes the status of the board depending on user input
- - `refresh.cpp`: refresh the board in case the user failed the puzzle
- - `shoot.cpp`: shoot a bullet to the front if the user requested. The bullet breaks the block.
+ - `initialscript.cpp`: loads one of the three initial boards - boards before the user changed - and start the game. 
+ - `display.cpp`: outputs the current board. Changes the state of the board depending on the user's interaction.
+ - `movement.cpp`: includes 2 functions (one for moving the movable tiles in 4 directions, one for shooting from the base) about user interactions.
+ - `trueornot`: decides if each movable tile is able to move to the direction that the user decided to move (e.g. not blocked).
+ - `game2.cpp`: Responsible for maintainting she basic structure of Game 2: the game will loop unless they player shoots the core.
  
 Third Round (Game3.h)
  - `tubeassign.cpp`: randomly assign the location of the tubes
