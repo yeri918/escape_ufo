@@ -56,13 +56,16 @@ int main(){
     elapsed_time=double(chrono::duration_cast <chrono::seconds > (end-start).count());
     autosave(input,id,checkpoint,elapsed_time);
 
-    Game3();
-    checkpoint="3";
-    end=chrono::steady_clock::now();
-    elapsed_time=double(chrono::duration_cast <chrono::seconds > (end-start).count());
-    autosave(input,id,checkpoint,elapsed_time);
+    if (Game3()==0){
+      checkpoint="3";
+      end=chrono::steady_clock::now();
+      elapsed_time=double(chrono::duration_cast <chrono::seconds > (end-start).count());
+      autosave(input,id,checkpoint,elapsed_time);
+      ranking(id);
+    }else{
+      autosave(input,id,"0",0);
+    }
 
-    ranking(id);
   }else if (input==2){
     if (stage==" 1"){
       auto start=chrono::steady_clock::now();
@@ -72,24 +75,27 @@ int main(){
       auto end=chrono::steady_clock::now();
       elapsed_time=double(chrono::duration_cast <chrono::seconds > (end-start).count());
       autosave(input,id,checkpoint,elapsed_time);
-
-      Game3();
-      checkpoint="3";
-      end=chrono::steady_clock::now();
-      elapsed_time=double(chrono::duration_cast <chrono::seconds > (end-start).count());
-      autosave(input,id,checkpoint,elapsed_time);
-
-      ranking(id);
+      if (Game3()==0){
+        checkpoint="3";
+        end=chrono::steady_clock::now();
+        elapsed_time=double(chrono::duration_cast <chrono::seconds > (end-start).count());
+        autosave(input,id,checkpoint,elapsed_time);
+        ranking(id);
+      }else{
+        autosave(input,id,"0",0);
+      }
     }else if (stage==" 2"){
       checkpoint="2";
       auto start=chrono::steady_clock::now();
-      Game3();
-      checkpoint="3";
-      auto end=chrono::steady_clock::now();
-      elapsed_time=double(chrono::duration_cast <chrono::seconds > (end-start).count());
-      autosave(input,id,checkpoint,elapsed_time);
-
-      ranking(id);
+      if (Game3()==0){
+        checkpoint="3";
+        auto end=chrono::steady_clock::now();
+        elapsed_time=double(chrono::duration_cast <chrono::seconds > (end-start).count());
+        autosave(input,id,checkpoint,elapsed_time);
+        ranking(id);
+      }else{
+        autosave(input,id,"0",0);
+      }
     }else if (stage==" 3"){
       cout << "You completed all the rounds earlier" << endl;
       ranking(id);
@@ -168,7 +174,7 @@ string autosave(int input, string id, string checkpoint,double elapsed_time){
 
 void ranking(string id){
   cout << endl;
-  cout << "   RANKING" << endl;
+  cout << "       RANKING\n" << endl;
   ifstream fin("autosave.txt");
   ofstream fout("scoreboard.txt");
   int players_completed=0;
