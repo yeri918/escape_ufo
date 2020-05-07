@@ -7,7 +7,7 @@
 #include <stdio.h>
 using namespace std;
 
-void Game3();
+int Game3();
 
 void intro_three();
 
