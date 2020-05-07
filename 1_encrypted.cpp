@@ -1,12 +1,15 @@
 #include <iostream>
 #include <string>
+#include <ctime>
 #include "Game1.h"
 using namespace std;
 
 string encryption(string messege, counting count)
 {
-	int encrypted, condition = count.f_machine + count.f_dlc;
+	int encrypted, condition = count.f_machine + count.f_dlc, coder;
 	char code;
+	srand(time(NULL));
+	coder = rand() % 15 + 1;
 	string copied = "";
 
 	switch (condition) {
@@ -14,7 +17,7 @@ string encryption(string messege, counting count)
 		for (int i = 0; i < messege.length(); i++)
 		{
 			encrypted = int(messege[i]);
-			code = encrypted + 4;
+			code = encrypted + coder;
 			copied += code;
 		}
 		return copied;
@@ -25,7 +28,7 @@ string encryption(string messege, counting count)
 		{
 			encrypted = int(messege[i]);
 			if (encrypted > 105) {
-				code = encrypted + 4;
+				code = encrypted + coder;
 			}
 			else {
 				code = encrypted;

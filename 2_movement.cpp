@@ -1,11 +1,11 @@
 #include <iostream>
 #include "Game2.h"
-
 using namespace std;
 
 int movement(boxes box[49], int &ammo) 
 {
-	int direction, actualmove, condition;
+	long long int direction;
+	int actualmove, condition, callcount = 0;
 	boxes copy[49];
 
 	for (int i = 0; i < 49; i++) {
@@ -16,7 +16,9 @@ int movement(boxes box[49], int &ammo)
 	cout << "1. up     2. left     3. down     4. right     5. Shoot" << endl;
 	cout << "-------------------------------------------------------" << endl;
 	cin >> direction;
+	if (direction < 10) {
 
+	}
 	for (int i = 0; i < 49; i++) {
 		if (box[i].setting == 2) {
 			switch (direction) {
@@ -49,15 +51,18 @@ int movement(boxes box[49], int &ammo)
 				}
 				break;
 			case 5: //shoot
-				cout << "There will be only " << ammo-1 << " .......bullet left." << endl;
 				ammo--;
+				cout << "\nThere is only " << ammo  << " bullet left." << endl;
 				condition = shoot(box, ammo);
 				if (condition == 1) {
 					return condition;
 				}
 				return condition;
 			default:
-				cout << "There are only 5 buttons..." << endl;
+				if (callcount == 0) {
+					cout << "There are only 5 buttons..." << endl;
+					callcount += 1;
+				}
 				break;
 			}
 		}
@@ -65,6 +70,31 @@ int movement(boxes box[49], int &ammo)
 	for (int i = 0; i < 49; i++) {
 		box[i].position = copy[i].position;
 		box[i].setting = copy[i].setting;
+	}
+	return 0;
+}
+
+int shoot(boxes box[49], int& ammo) {
+	while (ammo >= 0) {
+		for (int i = 45; i > 0; i -= 7) {
+			int obstacle = box[i].setting;
+			switch (obstacle) {
+			case 2:
+				box[i].setting = 1;
+				cout << "\n[BOOM]\n" << endl;
+				cout << "Hmm... thats done.\n" << endl;
+				return 0;
+			case 5:
+				box[i].setting = 1;
+				cout << "\n[BOOOOOOOOM]" << endl;
+				cout << "(It seems the core has been destroyed.)\n" << endl;
+				cout << "This definetly destroyed this 'core'.\nPretty sure I can get out of this place now.\n" << endl;
+				return 1;
+			}
+		}
+	}
+	if (ammo == 0) {
+		cout << "Maybe I should start again. Hope I don't get messed up next time." << endl;
 	}
 	return 0;
 }
