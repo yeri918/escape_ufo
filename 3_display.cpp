@@ -73,7 +73,7 @@ int success(int humanpos[2]){
   }
   return 0; //not yet!
 }
-void Game3(){
+int Game3(){
   string board[12][30];
   int humanpos[2]={11,1};
   int alienpos[4][2]={{0,0},{0,0},{0,0},{0,0}};
@@ -88,8 +88,10 @@ void Game3(){
     alienmove(board,alienpos,humanpos,tubepos);
     if (collision(humanpos,alienpos)==1){
       printBoard(board);
+      return 1;
       cout << "Game over.";
       break;
     }
   }
+  return 0;
 }
