@@ -46,8 +46,6 @@ The `switch` statement will be used to load the game from where the player has e
 
 A dynamic struct array scoreboard is needed to display/sort the final scores of the user. Initially, the array will be assigned very largely (about a thousand or even more), but it will be altered to the number of lines of text file scoreboard.txt (which would be explained later). 
 
-Dynamic struct array inventory will also be created to save all the objects that the user keeps during the gameplay. Since it is unknown how many items the user will keep, the array is initially sized zero, and later expanded depending on the number of items. The struct will include two string values: an item name and an item description.
-
 ## 4. File Input/Output
 
 Two files needed: **autosave.txt**, **scoreboard.txt**
@@ -65,7 +63,7 @@ This blank text file is created as soon as the game operates for the first time 
 The game will have an option to resume it. If the user wants to resume the game, the user can input the ID and continue the game. In case the user cannot remember the ID, there is an option to see all of the content in autosave.txt and input the ID shown (file output).
 
 **scoreboard.txt**
-The file is created after the game is completed, and gets removed. When the user ends the game, a line is inputted in a file:
+The file is created after the game is completed. The ranking is outputted to the player's screen, and it gets removed. When the user ends the game, a line is inputted in a file:
 
 `UserName` `Score` 
 
