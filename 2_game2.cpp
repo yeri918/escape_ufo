@@ -11,7 +11,7 @@ int Game2()
 
 	cout << "What is this now. An electric gate? And what is this board?\n\n";
 	cout << "[Move the 'O's to shoot the core(&). You can also destroy 'O's with the shooter. You cannot move the 'X's]\n\n";
-	cout << "Thats what is says... Okay, there are some buttons here. Seems like this 'gun' comes out from '|' sign \n";
+	cout << "That's what it says... Okay, there are some buttons here. Seems like this 'gun' comes out from '|' sign \n";
 	cout << "There are two bullets left.\n\n";
 
 	initialscript(box);
